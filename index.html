@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KitBook</title>
+    <!-- bootstrap icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h2 class="title">KitBook</h2>
+        <ul class="menu">
+          <li class="active">Kitaplar</li>
+          <li>SesliKitaplar</li>
+          <li>Hediyeler</li>
+          <li>Hakkında</li>
+        </ul>
+        <ul class="menu_icons">
+          <li><i class="bi bi-person"></i></li>
+          <li><i class="bi bi-search"></i></li>
+          <li class="basket_icon" onclick="toggleModal()">
+            <i class="bi bi-bag"></i>
+            <span class="basket_count"></span>
+          </li>
+          <span
+            class="light-mode"
+            id="lightModeToggle"
+            onclick="toggleDarkMode()"
+          >
+            <i class="bi bi-brightness-high"></i>
+          </span>
+        </ul>
+      </nav>
+    </header>
+    <!-- slider -->
+    <section class="slider">
+      <div id="carouselBookSlider" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/okumak.jpeg" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="images/31388_hd.jpg" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="images/okumak2.jpg" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselBookSlider"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselBookSlider"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <!-- products -->
+    <section class="store mt-5">
+      <div class="filter_background"></div>
+      <ul class="filter">
+        <!-- <li class="active">Tümü</li>
+        <li>Roman</li>
+        <li>Şiir</li>
+        <li>Tarih</li>
+        <li>Bilim</li>
+        <li>Eğitim</li>
+        <li>Çocuk</li>
+        <li>Kişisel Gelişim</li>
+        <li>Hobi</li> -->
+      </ul>
+      <div class="row book_list">
+        <!-- <div class="col-5 offset-2 my-5">
+          <div class="row book_card">
+            <div class="col-6">
+              <img
+                src="images/roman1.jpg"
+                class="img-fluid shadow"
+                width="258px"
+                height="400px"
+              />
+            </div>
+            <div class="col-6 d-flex flex-column justify-content-center gap-4">
+              <div class="books_detail">
+                <span class="fos gray fs-5">F.M. Dostoyevski</span><br />
+                <span class="fs-4 fw-bold">Suç ve Ceza</span><br />
+                <span class="book_star-rate">
+                  <i class="bi bi-star-fill active"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <span class="gray">1938 reviews</span>
+                </span>
+              </div>
+              <p class="book_description fos gray">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Corrupti dolores omnis saepe consectetur ipsa dolore nostrum
+                soluta a in incidunt.
+              </p>
+              <div>
+                <span class="black fw-bold fs-4 me-2">45tl</span>
+                <span class="fs-4 fw-bold old_price">65tl</span>
+              </div>
+              <button class="btn_purple">Sepete Ekle</button>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-5 my-5">
+          <div class="row book_card">
+            <div class="col-6">
+              <img
+                src="images/roman2.jpeg"
+                class="img-fluid shadow"
+                width="258px"
+                height="400px"
+              />
+            </div>
+            <div class="col-6 d-flex flex-column justify-content-center gap-4">
+              <div class="books_detail">
+                <span class="fos gray fs-5">F.M. Dostoyevski</span><br />
+                <span class="fs-4 fw-bold">Suç ve Ceza</span><br />
+                <span class="book_star-rate">
+                  <i class="bi bi-star-fill active"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <span class="gray">1938 reviews</span>
+                </span>
+              </div>
+              <p class="book_description fos gray">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Corrupti dolores omnis saepe consectetur ipsa dolore nostrum
+                soluta a in incidunt.
+              </p>
+              <div>
+                <span class="black fw-bold fs-4 me-2">45tl</span>
+                <span class="fs-4 fw-bold old_price">65tl</span>
+              </div>
+              <button class="btn_purple">Sepete Ekle</button>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-5 offset-2 my-5">
+          <div class="row book_card">
+            <div class="col-6">
+              <img
+                src="images/roman3.jpeg"
+                class="img-fluid shadow"
+                width="258px"
+                height="400px"
+              />
+            </div>
+            <div class="col-6 d-flex flex-column justify-content-center gap-4">
+              <div class="books_detail">
+                <span class="fos gray fs-5">F.M. Dostoyevski</span><br />
+                <span class="fs-4 fw-bold">Suç ve Ceza</span><br />
+                <span class="book_star-rate">
+                  <i class="bi bi-star-fill active"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <span class="gray">1938 reviews</span>
+                </span>
+              </div>
+              <p class="book_description fos gray">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Corrupti dolores omnis saepe consectetur ipsa dolore nostrum
+                soluta a in incidunt.
+              </p>
+              <div>
+                <span class="black fw-bold fs-4 me-2">45tl</span>
+                <span class="fs-4 fw-bold old_price">65tl</span>
+              </div>
+              <button class="btn_purple">Sepete Ekle</button>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-5 my-5">
+          <div class="row book_card">
+            <div class="col-6">
+              <img
+                src="images/roman4.jpeg"
+                class="img-fluid shadow"
+                width="258px"
+                height="400px"
+              />
+            </div>
+            <div class="col-6 d-flex flex-column justify-content-center gap-4">
+              <div class="books_detail">
+                <span class="fos gray fs-5">F.M. Dostoyevski</span> <br />
+                <span class="fs-4 fw-bold">Suç ve Ceza</span><br />
+                <span class="book_star-rate">
+                  <i class="bi bi-star-fill active"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <span class="gray">1938 reviews</span>
+                </span>
+              </div>
+              <p class="book_description fos gray">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Corrupti dolores omnis saepe consectetur ipsa dolore nostrum
+                soluta a in incidunt.
+              </p>
+              <div>
+                <span class="black fw-bold fs-4 me-2">45tl</span>
+                <span class="fs-4 fw-bold old_price">65tl</span>
+              </div>
+              <button class="btn_purple">Sepete Ekle</button>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- basket -->
+    <div class="basket_modal">
+      <div class="basket_items">
+        <i class="bi bi-x" onclick="toggleModal()"></i>
+        <h2 class="basket_title">Sepetteki Ürünler</h2>
+        <ul class="basket_list">
+          <li class="basket_item">
+            <p class="text-center w-100">
+              Sepette herhangi bir ürün bulunmuyor. Sepete ürün ekleyin.
+            </p>
+          </li>
+          <!-- <li class="basket_item">
+            <img src="images/roman1.jpg" width="100" height="100" />
+            <div class="basket_item-info">
+              <h3 class="book_name">Suç ve Ceza</h3>
+              <span class="book_price">45tl</span><br />
+              <span class="book_remove">Sepetten Kaldır</span>
+            </div>
+            <div class="book_count">
+              <span class="decrease">-</span>
+              <span class="mx-2">2</span>
+              <span class="increase">+</span>
+            </div>
+          </li> -->
+        </ul>
+
+        <div class="basket_total">
+          <span class="fw-bold fs-4 mb-3 total_price"></span>
+          <button class="btn_purple btnCheck">Onayla</button>
+        </div>
+      </div>
+    </div>
+    <!-- bs js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
